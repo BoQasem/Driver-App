@@ -13,5 +13,10 @@
 -get the best route to pick up the stdents with the least time possible. <b>not done</b>
 
 <hr>
+Things that are finished here <span>&#8595;</span> 
+<br>
+-implelement splash screen 
+<br>
+-add login Activity 
 <img src="https://github.com/BoQasem/splash-screen/blob/main/explain/splash screen.gif" width="900" height="500">
 
