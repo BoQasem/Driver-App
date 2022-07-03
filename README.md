@@ -15,8 +15,6 @@
 <hr>
 Things that are finished here <span>&#8595;</span> 
 <br>
--implelement splash screen 
-<br>
--add login Activity 
-<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/splash screen.gif" width="900" height="500">
+-add checkbox to "remember me" in login
+<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/check-box.gif" width="900" height="500">
 
