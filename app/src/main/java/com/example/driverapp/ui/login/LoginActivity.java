@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -25,13 +26,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.driverapp.Home;
 import com.example.driverapp.R;
 import com.example.driverapp.ui.login.LoginViewModel;
 import com.example.driverapp.ui.login.LoginViewModelFactory;
 import com.example.driverapp.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
-//    CheckBox remember;
+    public static String checkbox;
+    CheckBox remember;
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
 
@@ -47,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
-//        remember = findViewById(R.id.rememberMe);
+        remember = findViewById(R.id.rememberMe);
         final Button loginButton = binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
 
@@ -67,25 +70,25 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
-            @Override
-            public void onChanged(@Nullable LoginResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                }
-                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                finish();
-            }
-        });
+//        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
+//            @Override
+//            public void onChanged(@Nullable LoginResult loginResult) {
+//                if (loginResult == null) {
+//                    return;
+//                }
+//                loadingProgressBar.setVisibility(View.GONE);
+//                if (loginResult.getError() != null) {
+//                    showLoginFailed(loginResult.getError());
+//                }
+//                if (loginResult.getSuccess() != null) {
+//                    updateUiWithUser(loginResult.getSuccess());
+//                }
+//                setResult(Activity.RESULT_OK);
+//
+//                //Complete and destroy login activity once successful
+//                finish();
+//            }
+//        });
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -118,31 +121,50 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+//        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+//        checkbox = preferences.getString("remeber","");
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-//                Intent intent = new Intent(LoginActivity.this,Home.class);
-//                startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this,Home.class);
+                startActivity(intent);
+                finish();
             }
         });
-//        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//
-//            }
-//        });
+
+        // show message bottom screen either "Checked" or "Unchecked"
+        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()){
+                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember","true");
+                    editor.apply();
+                    Toast.makeText(LoginActivity.this,"Checked",Toast.LENGTH_SHORT).show();
+                }else if(!compoundButton.isChecked()){
+                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember","false");
+                    editor.apply();
+                    Toast.makeText(LoginActivity.this,"Unchecked",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
-    private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-    }
+//    private void updateUiWithUser(LoggedInUserView model) {
+//       String welcome = getString(R.string.welcome) + model.getDisplayName();
+//        // TODO : initiate successful logged in experience
+//        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+//    }
 
-    private void showLoginFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
-    }
+//    private void showLoginFailed(@StringRes Integer errorString) {
+//        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+//    }
 }
