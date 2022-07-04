@@ -9,6 +9,10 @@
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_home.xml" value="0.20018115942028986" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_students.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/list_student.xml" value="0.33" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/profile.xml" value="0.25" />
       </map>
     </option>
   </component>
