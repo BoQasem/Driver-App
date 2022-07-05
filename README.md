@@ -4,9 +4,7 @@
 <br>
 -show notification if student not going to school today. <b>not done</b> 
 <br>
--send notify to parents app if bus near from home (approximate 500m). <b>not done</b>
-<br>
--show rate. <b>not done</b>
+-show rate. <span>&#10003;</span>
 <br>
 -chat with parents. <b>not done</b>
 <br>
@@ -15,8 +13,6 @@
 <hr>
 Things that are finished here <span>&#8595;</span> 
 <br>
--add some students in "StudentsActivity.java" and show.
-<br>
--show profile for student when pressed
-<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/show-students.gif" width="900" height="500">
+-show rate.
+<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/show-rate.gif" width="900" height="500">
 
