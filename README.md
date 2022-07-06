@@ -2,7 +2,7 @@
 
 -list of students that will be in the ride. <span>&#10003;</span>
 <br>
--show notification if student not going to school today. <b>not done</b> 
+-show notification if student not going to school today. <span>&#10003;</span>
 <br>
 -show rate. <span>&#10003;</span>
 <br>
@@ -13,6 +13,7 @@
 <hr>
 Things that are finished here <span>&#8595;</span> 
 <br>
--show rate.
-<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/show-rate.gif" width="900" height="500">
+-Alert, for student who will be absent.
+assume the button mean the parent sent.
+<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/notification_absence.gif" width="900" height="500">
 
