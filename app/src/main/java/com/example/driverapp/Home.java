@@ -4,11 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,16 +24,29 @@ import android.widget.Toast;
 
 import com.example.driverapp.ui.login.LoginActivity;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.MessageFormat;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
     Toolbar toolbar;
-
+    Button withParentBn;
+    NotificationCounter notificationCounter;
+    DrawerLayout mainLayout;
 //    Button logout;
 //    Button showStudentBt;
 
+    public void snackBar(View v){
+        Snackbar.make(mainLayout,"student will be absent.",Snackbar.LENGTH_LONG)
+                .setAction("Close",new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view){
+
+                    }
+                })
+                .setActionTextColor(getResources().getColor(R.color.purple_200)).show();
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -63,6 +81,31 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mainLayout = findViewById(R.id.drawer_layout);
+
+        notificationCounter = new NotificationCounter(findViewById(R.id.bell));
+        withParentBn = findViewById(R.id.button_with_parent);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("My Notification","My Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        withParentBn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(Home.this,"My Notification");
+                builder.setContentTitle("Absence of a student");
+                builder.setContentText("Student Mohammed Qasem will be absent today");
+                builder.setSmallIcon(R.drawable.ic_notification);
+                builder.setAutoCancel(true);
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Home.this);
+                managerCompat.notify(1,builder.build());
+
+                notificationCounter.increaseNumber();
+//                snackBar(view);
+            }
+        });
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

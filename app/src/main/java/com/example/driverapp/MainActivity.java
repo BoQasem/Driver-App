@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public void run_activity(){
         if(LoginActivity.checkbox.equals("false")){
             Toast.makeText(this,"Please Login",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, Home.class);
             startActivity(intent);
             finish();
         }else if(LoginActivity.checkbox.equals("true") ){
