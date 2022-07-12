@@ -13,9 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class ProfileFragment extends Fragment {
-    Button rateButton;
-    RatingBar ratingStars;
-    float myRating = 0;
+//    Button rateButton;
+//    RatingBar ratingStars;
+//    float myRating = 0;
 
     @Nullable
     @Override
@@ -25,22 +25,22 @@ public class ProfileFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        rateButton = view.findViewById(R.id.button_rat);
-        ratingStars = view.findViewById(R.id.ratingBar);
-
-        ratingStars.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                myRating = ratingBar.getRating();
-            }
-        });
-
-        rateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(ProfileFragment.this.getActivity(), String.valueOf(myRating), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        rateButton = view.findViewById(R.id.button_rat);
+//        ratingStars = view.findViewById(R.id.ratingBar);
+//
+//        ratingStars.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+//            @Override
+//            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+//                myRating = ratingBar.getRating();
+//            }
+//        });
+//
+//        rateButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(ProfileFragment.this.getActivity(), String.valueOf(myRating), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         super.onViewCreated(view, savedInstanceState);
     }

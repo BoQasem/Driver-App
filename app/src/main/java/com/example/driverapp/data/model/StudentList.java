@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.driverapp.R;
+import com.example.driverapp.StudentsActivity;
 
 import java.util.*;
 import java.util.ArrayList;
@@ -17,8 +18,15 @@ import java.util.List;
 
 public class StudentList extends ArrayAdapter<Student> {
 
+    public static int size = 0;
+
+//    public void setSize(Context context,ArrayList<Student> studentArrayList) {
+//        this.size = studentArrayList.size();
+//    }
+
     public StudentList(Context context, ArrayList<Student> studentArrayList){
         super(context, R.layout.list_student,studentArrayList);
+        size = studentArrayList.size();
     }
 
     @NonNull
@@ -43,4 +51,5 @@ public class StudentList extends ArrayAdapter<Student> {
         return convertView;
 //        return super.getView(position, convertView, parent);
     }
+
 }

@@ -31,8 +31,8 @@ import java.text.MessageFormat;
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
     Toolbar toolbar;
-    Button withParentBn;
-    NotificationCounter notificationCounter;
+//    Button withParentBn;
+//    NotificationCounter notificationCounter;
     DrawerLayout mainLayout;
 //    Button logout;
 //    Button showStudentBt;
@@ -63,6 +63,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
                 break;
+            case R.id.nav_logout:
+                break;
+
         }
         drawer .closeDrawer(GravityCompat.START);
         return true;
@@ -83,29 +86,29 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.activity_home);
         mainLayout = findViewById(R.id.drawer_layout);
 
-        notificationCounter = new NotificationCounter(findViewById(R.id.bell));
-        withParentBn = findViewById(R.id.button_with_parent);
+//        notificationCounter = new NotificationCounter(findViewById(R.id.bell));
+       // withParentBn = findViewById(R.id.button_with_parent);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel channel = new NotificationChannel("My Notification","My Notification", NotificationManager.IMPORTANCE_DEFAULT);
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
-        }
-        withParentBn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(Home.this,"My Notification");
-                builder.setContentTitle("Absence of a student");
-                builder.setContentText("Student Mohammed Qasem will be absent today");
-                builder.setSmallIcon(R.drawable.ic_notification);
-                builder.setAutoCancel(true);
-                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Home.this);
-                managerCompat.notify(1,builder.build());
-
-                notificationCounter.increaseNumber();
-//                snackBar(view);
-            }
-        });
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+//            NotificationChannel channel = new NotificationChannel("My Notification","My Notification", NotificationManager.IMPORTANCE_DEFAULT);
+//            NotificationManager manager = getSystemService(NotificationManager.class);
+//            manager.createNotificationChannel(channel);
+//        }
+//        withParentBn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NotificationCompat.Builder builder = new NotificationCompat.Builder(Home.this,"My Notification");
+//                builder.setContentTitle("Absence of a student");
+//                builder.setContentText("Student Mohammed Qasem will be absent today");
+//                builder.setSmallIcon(R.drawable.ic_notification);
+//                builder.setAutoCancel(true);
+//                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Home.this);
+//                managerCompat.notify(1,builder.build());
+//
+//                notificationCounter.increaseNumber();
+////                snackBar(view);
+//            }
+//        });
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

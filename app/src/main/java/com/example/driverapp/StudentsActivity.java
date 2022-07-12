@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class StudentsActivity extends AppCompatActivity {
 
     ActivityStudentsBinding binding;
+    public static ArrayList<Student> studentArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,6 @@ public class StudentsActivity extends AppCompatActivity {
         String[] age = {"22","23","23","21","20"};
 //        boolean[] absence = {false,false,false,false,true};
 
-        ArrayList<Student> studentArrayList = new ArrayList<>();
         for(int i=0; i<firstName.length; i++){
             Student obj = new Student(firstName[i],lastName[i],surName[i],age[i]);
             studentArrayList.add(obj);

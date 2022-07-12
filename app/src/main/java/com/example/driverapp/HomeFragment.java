@@ -1,24 +1,23 @@
 package com.example.driverapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RatingBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.Fragment;
 
-public class HomeFragment extends Fragment {
-    Button showStudentBt;
+import com.example.driverapp.data.model.StudentList;
 
+public class HomeFragment extends Fragment {
+    TextView showStudentBt;
+    Button startTripBt;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,12 +26,22 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        showStudentBt = view.findViewById(R.id.showStudent);
-
+        showStudentBt = view.findViewById(R.id.show_present);
+        startTripBt = view.findViewById(R.id.start_trip);
+//        showStudentBt.setText(String.valueOf(StudentList.size));
+        showStudentBt.setText("5");
         showStudentBt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeFragment.this.getActivity(),StudentsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        startTripBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeFragment.this.getActivity(),MapsActivity2.class);
                 startActivity(intent);
             }
         });
