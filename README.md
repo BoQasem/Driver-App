@@ -22,9 +22,13 @@
       </td>
       <td>
           1.profile for list absent students, when click on absent
+          <br>
           2.page for notification.
+          <br>
           3.profile for driver,student,get information from database.
+          <br>
           4.number of present and absent student today.
+          <br>
           5.logout.
       </td>
     </tr>
