@@ -13,7 +13,6 @@
 <hr>
 Things that are finished here <span>&#8595;</span> 
 <br>
--Alert, for student who will be absent.
-assume the button mean the parent sent.
-<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/show_map.gif" width="900" height="500">
+-show map.
+<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/show_map.gif" width="250" height="500">
 
