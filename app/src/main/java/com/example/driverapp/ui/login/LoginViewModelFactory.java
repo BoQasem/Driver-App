@@ -1,11 +1,10 @@
 package com.example.driverapp.ui.login;
-
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
-import com.example.driverapp.data.LoginDataSource;
-import com.example.driverapp.data.LoginRepository;
+import com.example.driverapp.ui.login.LoginDataSource;
+import com.example.driverapp.ui.login.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

@@ -3,30 +3,47 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.153" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_bus.xml" value="0.14" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_home.xml" value="0.153" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.153" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_main_background.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_main_background2.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_message.xml" value="0.1235" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_notification.xml" value="0.166" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_outbox.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_profile.xml" value="0.1235" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/drawable/ic_send.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout-w936dp/fragment_profile.xml" value="0.13968579234972678" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_absent.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_home.xml" value="0.23210562890896455" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_home_page.xml" value="0.1644021739130435" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_maps.xml" value="0.19010416666666666" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_maps2.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_message_details.xml" value="0.1" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_notification.xml" value="0.22" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_pickup_point.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/activity_students.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/bell.xml" value="0.4238095238095238" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/fragment_inbox.xml" value="0.1" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/fragment_logout.xml" value="0.16757246376811594" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/fragment_message.xml" value="0.1" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/fragment_outbox.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/fragment_send_message.xml" value="0.18" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/layout_login.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/list_student.xml" value="0.33" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/message_list.xml" value="0.1" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/nav_header.xml" value="0.18" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/layout/profile.xml" value="0.25" />
         <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/menu/drawer_menu.xml" value="0.22" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.153" />
+        <entry key="..\:/AndroidPratice/DriverApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.153" />
       </map>
     </option>
   </component>

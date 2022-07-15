@@ -4,12 +4,19 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import android.util.Log;
 import android.util.Patterns;
 
-import com.example.driverapp.data.LoginRepository;
-import com.example.driverapp.data.Result;
-import com.example.driverapp.data.model.LoggedInUser;
+import com.example.driverapp.model.LoggedInUserView;
+import com.example.driverapp.model.LoginResult;
+import com.example.driverapp.network.ApiClient;
+import com.example.driverapp.ui.login.LoginRepository;
 import com.example.driverapp.R;
+import com.example.driverapp.model.LoginResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginViewModel extends ViewModel {
 
@@ -21,45 +28,70 @@ public class LoginViewModel extends ViewModel {
         this.loginRepository = loginRepository;
     }
 
-    LiveData<LoginFormState> getLoginFormState() {
+    public LiveData<LoginFormState> getLoginFormState() {
         return loginFormState;
     }
 
-    LiveData<LoginResult> getLoginResult() {
+    public LiveData<LoginResult> getLoginResult() {
         return loginResult;
     }
 
-    public void login(String username, String password) {
-        // can be launched in a separate asynchronous job
-        Result<LoggedInUser> result = loginRepository.login(username, password);
+    public void login(String phoneNumber, String password) {
 
-        if (result instanceof Result.Success) {
-            LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
-            loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
-        } else {
-            loginResult.setValue(new LoginResult(R.string.login_failed));
-        }
+//        LoginResponse result = new LoginResponse();
+//        try {
+//
+//            ApiClient.getUserService().loginAndGetToken(phoneNumber,password).enqueue(new Callback<LoginResponse>() {
+//                @Override
+//                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+//
+//                    if(response.isSuccessful()){
+//                        if(response.body() != null) {
+//                            loginResult.setValue(new LoginResult(new LoggedInUserView("success", response.body().getid(),
+//                                    response.body().getfirst_name(), response.body().getlast_name(),
+//                                    response.body().getPhone(), response.body().getEmail(), response.body().getLocation())));
+//                        }
+//                        else{
+//                            loginResult.setValue(new LoginResult(new LoggedInUserView("failed")));
+//                        }
+//                    }
+//                    else{
+//                        loginResult.setValue(new LoginResult(new LoggedInUserView("error")));
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<LoginResponse> call, Throwable t) {
+//                    result.setid(-404);
+//                    result.setfirst_name("Error Must Enable Internet");
+//                    loginResult.setValue(new LoginResult(R.string.login_failed));
+//                    Log.d("log in : ","failed");
+//                    Log.e("TAG","NET_ERROR:" + t.toString());
+//                }
+//            });
+//        }
+//        catch (Exception e) {
+//            Log.e("error", e.toString());
+//        }
     }
 
-    public void loginDataChanged(String username, String password) {
-        if (!isUserNameValid(username)) {
-            loginFormState.setValue(new LoginFormState(R.string.invalid_username, null));
-        } else if (!isPasswordValid(password)) {
-            loginFormState.setValue(new LoginFormState(null, R.string.invalid_password));
-        } else {
-            loginFormState.setValue(new LoginFormState(true));
-        }
+    public void loginDataChanged(String phoneNumber, String password) {
+//        if (!isPhoneNumberValid(phoneNumber)) {
+//            loginFormState.setValue(new LoginFormState(R.string.invalid_phoneNumber, null));
+//        } else if (!isPasswordValid(password)) {
+//            loginFormState.setValue(new LoginFormState(null, R.string.invalid_password));
+//        } else {
+//            loginFormState.setValue(new LoginFormState(true));
+//        }
     }
 
-    // A placeholder username validation check
-    private boolean isUserNameValid(String username) {
-        if (username == null) {
+    // A placeholder phoneNumber validation check
+    private boolean isPhoneNumberValid(String phoneNumber) {
+        if (phoneNumber.isEmpty()) {
             return false;
         }
-        if (username.contains("@")) {
-            return Patterns.EMAIL_ADDRESS.matcher(username).matches();
-        } else {
-            return !username.trim().isEmpty();
+        else {
+            return Patterns.PHONE.matcher(phoneNumber).matches();
         }
     }
 
@@ -67,4 +99,5 @@ public class LoginViewModel extends ViewModel {
     private boolean isPasswordValid(String password) {
         return password != null && password.trim().length() > 5;
     }
+
 }

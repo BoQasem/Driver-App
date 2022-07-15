@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EDEDB1"
-    tools:context=".StudentsActivity">
+
+    tools:context=".ui.activity.StudentsActivity">
 
     <ListView
         android:id="@+id/listview"

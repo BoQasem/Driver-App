@@ -1,36 +1,36 @@
 package com.example.driverapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.RatingBar;
-import android.widget.Toast;
 
-import com.example.driverapp.ui.login.LoginActivity;
+import com.example.driverapp.ui.activity.NotificationActivity;
+import com.example.driverapp.ui.chat.Inbox;
+import com.example.driverapp.ui.chat.Outbox;
+import com.example.driverapp.ui.chat.SendMessage;
+import com.example.driverapp.ui.fragment.HomeFragment;
+import com.example.driverapp.ui.fragment.LogoutFragment;
+import com.example.driverapp.ui.fragment.ProfileFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.text.MessageFormat;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
     Toolbar toolbar;
+    ConstraintLayout button_bell;
+
 //    Button withParentBn;
 //    NotificationCounter notificationCounter;
     DrawerLayout mainLayout;
@@ -55,15 +55,25 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HomeFragment()).commit();
                 break;
-            case R.id.nav_message:
+            case R.id.nav_inbox:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MessageFragment()).commit();
+                        new Inbox()).commit();
+                break;
+            case R.id.nav_outbox:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Outbox()).commit();
+                break;
+            case R.id.nav_send:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SendMessage()).commit();
                 break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
                 break;
             case R.id.nav_logout:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new LogoutFragment()).commit();
                 break;
 
         }
@@ -86,6 +96,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.activity_home);
         mainLayout = findViewById(R.id.drawer_layout);
 
+        button_bell = findViewById(R.id.bell);
+        button_bell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
 //        notificationCounter = new NotificationCounter(findViewById(R.id.bell));
        // withParentBn = findViewById(R.id.button_with_parent);
 
@@ -111,7 +129,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 //        });
 
         toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
