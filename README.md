@@ -25,9 +25,7 @@
 
 
 <hr>
-Things that are finished here <span>&#8595;</span> 
-<br>
--Demo
+Demo
 <img src="https://github.com/BoQasem/splash-screen/blob/main/explain/Demo.gif" width="250" height="500">
 
 
