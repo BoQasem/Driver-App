@@ -27,10 +27,10 @@ public class StudentsActivity extends AppCompatActivity {
         binding = ActivityStudentsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_bar)));
-        String[] firstName = {"Abdo","monzer","taqi","mohmed","mosa"};
-        String[] lastName = {"ahmed","mohmed","eshaq","qasem","mohmed"};
-        String[] surName = {"alimi","hamed","maiof","saleh","mo"};
-        String[] age = {"22","23","23","21","20"};
+        String[] firstName = {"Micheal","Matthew","James","Francis","William"};
+        String[] lastName = { "William","lan","Robert","Shaun","lan"};
+        String[] surName = {  "Ellitott","Tiffany","Volz","Bennett","Bradshaw"};
+        String[] age = {"9","11","8","9","10"};
 //        boolean[] absence = {false,false,false,false,true};
 
         for(int i=0; i<firstName.length; i++){

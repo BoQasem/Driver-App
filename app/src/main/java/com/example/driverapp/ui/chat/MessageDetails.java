@@ -2,6 +2,7 @@ package com.example.driverapp.ui.chat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class MessageDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_details);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_bar)));
 
         title = findViewById(R.id.title);
         date  = findViewById(R.id.date);
