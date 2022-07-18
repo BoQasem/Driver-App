@@ -26,11 +26,6 @@
 Things that are finished here <span>&#8595;</span> 
 <br>
 -Demo
-<video width="250" height="500" controls>
-  <source src="https://github.com/BoQasem/splash-screen/blob/main/explain/DriverAppDemo.mp4" type="video/mp4"/>
-</video>
-<br>
-<br>
-<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/DriverAppDemo" width="250" height="500">
 
+https://user-images.githubusercontent.com/93032154/179632832-3cc36226-1af9-465e-b5c5-dd7dc3eee046.mp4
 
