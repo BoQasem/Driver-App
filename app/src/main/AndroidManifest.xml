@@ -50,13 +50,8 @@
             android:exported="false"
             android:label="Absent students" />
         <activity
-            android:name=".ui.activity.NotificationActivity"
-            android:exported="false"
-            android:label="Notification" />
-        <activity
             android:name=".Home"
             android:exported="false"
-            android:label="Home"
             android:theme="@style/Theme.DriverApp.NoActionBar" />
         <activity
             android:name=".ui.activity.LoginActivity"
