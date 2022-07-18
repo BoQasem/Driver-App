@@ -16,8 +16,6 @@
           -show rate. <span>&#10003;</span>
           <br>
           -chat with parents. <span>&#10003;</span>
-          <br>
-          -get the best route to pick up the stdents with the least time possible. <b>not done</b>
       </td>
     </tr>
   </tbody>
@@ -28,6 +26,11 @@
 Things that are finished here <span>&#8595;</span> 
 <br>
 -Demo
-<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/Demo.gif" width="250" height="500">
+<video width="250" height="500" controls>
+  <source src="https://github.com/BoQasem/splash-screen/blob/main/explain/DriverAppDemo.mp4" type="video/mp4"/>
+</video>
+<br>
+<br>
+<img src="https://github.com/BoQasem/splash-screen/blob/main/explain/DriverAppDemo" width="250" height="500">
 
 
